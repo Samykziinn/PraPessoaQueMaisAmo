@@ -1,0 +1,2037 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Para Evelem Kauane ❤️</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #080308;
+            color: white;
+            font-family: "Poppins", sans-serif;
+            overflow-x: hidden;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+
+        /* =========================================================
+           FUNDO
+        ========================================================= */
+
+        .background {
+            position: fixed;
+            inset: 0;
+            z-index: -10;
+
+            background:
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(255, 70, 120, .14),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 85% 80%,
+                    rgba(180, 20, 80, .12),
+                    transparent 30%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #080207,
+                    #18050e,
+                    #080207
+                );
+        }
+
+        .background::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    transparent 0%,
+                    rgba(0,0,0,.45) 100%
+                );
+        }
+
+        .noise {
+            position: fixed;
+            inset: 0;
+            z-index: -5;
+
+            pointer-events: none;
+
+            opacity: .035;
+
+            background-image:
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+        }
+
+
+        /* =========================================================
+           ESTRELAS
+        ========================================================= */
+
+        .stars {
+            position: fixed;
+            inset: 0;
+
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        .star {
+            position: absolute;
+
+            width: 2px;
+            height: 2px;
+
+            border-radius: 50%;
+
+            background: white;
+
+            opacity: .3;
+
+            animation: brilho 3s infinite ease-in-out;
+        }
+
+        @keyframes brilho {
+
+            0%,
+            100% {
+                opacity: .1;
+                transform: scale(.7);
+            }
+
+            50% {
+                opacity: .8;
+                transform: scale(1.5);
+            }
+        }
+
+
+        /* =========================================================
+           CORAÇÕES
+        ========================================================= */
+
+        .hearts {
+            position: fixed;
+            inset: 0;
+
+            overflow: hidden;
+
+            pointer-events: none;
+
+            z-index: 30;
+        }
+
+        .heart {
+            position: absolute;
+
+            bottom: -50px;
+
+            color: #ff6f9c;
+
+            opacity: 0;
+
+            animation: subirCoracao linear forwards;
+
+            filter: drop-shadow(
+                0 0 10px rgba(255, 80, 130, .4)
+            );
+        }
+
+        @keyframes subirCoracao {
+
+            0% {
+                transform:
+                    translateY(0)
+                    translateX(0)
+                    rotate(0deg)
+                    scale(.5);
+
+                opacity: 0;
+            }
+
+            15% {
+                opacity: .75;
+            }
+
+            100% {
+                transform:
+                    translateY(-110vh)
+                    translateX(60px)
+                    rotate(360deg)
+                    scale(1.2);
+
+                opacity: 0;
+            }
+        }
+
+
+        /* =========================================================
+           TELA INICIAL
+        ========================================================= */
+
+        #intro {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 30px;
+
+            position: relative;
+
+            transition:
+                opacity 1.5s ease,
+                transform 1.5s ease;
+        }
+
+        .intro-content {
+            width: 100%;
+            max-width: 800px;
+
+            animation: entrada 2s ease forwards;
+        }
+
+        @keyframes entrada {
+
+            from {
+                opacity: 0;
+                transform: translateY(35px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .intro-heart {
+            font-size: 28px;
+
+            color: #ff729d;
+
+            margin-bottom: 25px;
+
+            animation:
+                pulsar 2s infinite ease-in-out;
+        }
+
+        @keyframes pulsar {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.18);
+            }
+        }
+
+        .intro-small {
+            color: #c99daa;
+
+            font-size: 10px;
+
+            letter-spacing: 6px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 25px;
+        }
+
+        .intro-title {
+            font-family: "Cormorant Garamond", serif;
+
+            font-weight: 500;
+
+            font-size:
+                clamp(65px, 13vw, 140px);
+
+            line-height: .78;
+
+            letter-spacing: -3px;
+        }
+
+        .intro-title span {
+            color: #ff709b;
+        }
+
+        .intro-description {
+            max-width: 520px;
+
+            margin: 40px auto;
+
+            color: #bdaab1;
+
+            font-size: 13px;
+
+            line-height: 1.9;
+        }
+
+        .open-button {
+            position: relative;
+
+            padding: 18px 38px;
+
+            border-radius: 50px;
+
+            border: 1px solid
+                rgba(255, 125, 160, .45);
+
+            background:
+                rgba(255, 70, 110, .08);
+
+            color: white;
+
+            cursor: pointer;
+
+            letter-spacing: 2px;
+
+            font-size: 11px;
+
+            transition:
+                transform .4s ease,
+                background .4s ease,
+                box-shadow .4s ease;
+        }
+
+        .open-button:hover {
+            transform: translateY(-5px);
+
+            background:
+                rgba(255, 70, 110, .18);
+
+            box-shadow:
+                0 15px 50px
+                rgba(255, 50, 110, .2);
+        }
+
+        .open-button::after {
+            content: "♡";
+
+            margin-left: 10px;
+
+            color: #ff729d;
+        }
+
+
+        /* =========================================================
+           CONTEÚDO PRINCIPAL
+        ========================================================= */
+
+        #main {
+            display: none;
+
+            opacity: 0;
+
+            transition:
+                opacity 2s ease;
+        }
+
+        section {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding:
+                110px
+                7%;
+        }
+
+        .section-inner {
+            width: 100%;
+            max-width: 1050px;
+
+            text-align: center;
+        }
+
+        .eyebrow {
+            color: #dc7d9c;
+
+            font-size: 9px;
+
+            letter-spacing: 5px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size:
+                clamp(45px, 7vw, 80px);
+
+            font-weight: 500;
+
+            line-height: .95;
+
+            margin-bottom: 40px;
+        }
+
+
+        /* =========================================================
+           CARTA
+        ========================================================= */
+
+        .letter-section {
+            position: relative;
+        }
+
+        .letter {
+            width: 100%;
+
+            max-width: 850px;
+
+            margin: auto;
+
+            padding:
+                clamp(30px, 7vw, 75px);
+
+            text-align: left;
+
+            position: relative;
+
+            border-radius: 10px;
+
+            border:
+                1px solid
+                rgba(255, 255, 255, .09);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,255,255,.055),
+                    rgba(255,255,255,.012)
+                );
+
+            box-shadow:
+                0 50px 120px
+                rgba(0,0,0,.5),
+
+                inset
+                0 1px
+                rgba(255,255,255,.05);
+        }
+
+        .letter::before {
+            content: "♥";
+
+            position: absolute;
+
+            top: 22px;
+            right: 27px;
+
+            color:
+                rgba(255, 100, 145, .2);
+
+            font-size: 32px;
+        }
+
+        .letter-date {
+            color: #88747c;
+
+            font-size: 9px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 35px;
+        }
+
+        .letter h3 {
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-weight: 500;
+
+            font-size: 48px;
+
+            color: #ffeef3;
+
+            margin-bottom: 35px;
+        }
+
+        .letter p {
+            color: #d2c1c7;
+
+            font-size: 14px;
+
+            line-height: 2;
+
+            margin-bottom: 24px;
+        }
+
+
+        /* =========================================================
+           FRASE AQUARELA
+        ========================================================= */
+
+        .highlight {
+            margin:
+                50px 0;
+
+            padding:
+                38px 25px;
+
+            text-align: center;
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size:
+                clamp(29px, 5vw, 47px);
+
+            line-height: 1.15;
+
+            color: #ffe5ec;
+
+            border-top:
+                1px solid
+                rgba(255, 110, 150, .2);
+
+            border-bottom:
+                1px solid
+                rgba(255, 110, 150, .2);
+
+            text-shadow:
+                0 0 30px
+                rgba(255, 80, 130, .15);
+        }
+
+        .highlight span {
+            color: #ff709b;
+
+            font-size: 60px;
+
+            vertical-align: middle;
+        }
+
+        .signature {
+            margin-top: 45px;
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size: 34px;
+
+            line-height: 1.2;
+
+            color: #ff8eaa;
+        }
+
+
+        /* =========================================================
+           FOTO PRINCIPAL
+        ========================================================= */
+
+        .photo-section {
+            background:
+                linear-gradient(
+                    to bottom,
+                    transparent,
+                    rgba(255, 40, 100, .035),
+                    transparent
+                );
+        }
+
+        .main-photo {
+            width: min(780px, 100%);
+
+            height: 520px;
+
+            margin: auto;
+
+            overflow: hidden;
+
+            border-radius: 8px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.1);
+
+            box-shadow:
+                0 40px 100px
+                rgba(0,0,0,.55);
+
+            position: relative;
+        }
+
+        .main-photo img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition:
+                transform 1.2s ease;
+        }
+
+        .main-photo:hover img {
+            transform: scale(1.05);
+        }
+
+        .photo-overlay {
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(0,0,0,.5),
+                    transparent 50%
+                );
+
+            pointer-events: none;
+        }
+
+        .photo-caption {
+            margin-top: 25px;
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size: 27px;
+
+            color: #cdb8c0;
+        }
+
+
+        /* =========================================================
+           GALERIA
+        ========================================================= */
+
+        .gallery {
+            max-width: 950px;
+
+            margin:
+                50px auto 0;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 18px;
+        }
+
+        .gallery-item {
+            height: 320px;
+
+            overflow: hidden;
+
+            border-radius: 8px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.08);
+
+            cursor: pointer;
+
+            position: relative;
+        }
+
+        .gallery-item.tall {
+            height: 430px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition:
+                transform .9s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-item::after {
+            content: "♡";
+
+            position: absolute;
+
+            inset: 0;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 48px;
+
+            color: white;
+
+            background:
+                rgba(0,0,0,.2);
+
+            opacity: 0;
+
+            transition: .4s;
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+
+        /* =========================================================
+           CONTADOR
+        ========================================================= */
+
+        .counter-description {
+            max-width: 550px;
+
+            margin:
+                0 auto;
+
+            color: #9f8d94;
+
+            font-size: 13px;
+
+            line-height: 1.8;
+        }
+
+        .counter-box {
+            margin-top: 50px;
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+        .counter {
+            width: 135px;
+
+            padding: 25px 10px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.08);
+
+            background:
+                rgba(255,255,255,.025);
+
+            border-radius: 8px;
+        }
+
+        .counter strong {
+            display: block;
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size: 47px;
+
+            font-weight: 500;
+
+            color: #ff82a5;
+        }
+
+        .counter span {
+            color: #88767e;
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================================
+           FRASE
+        ========================================================= */
+
+        .quote {
+            min-height: 80vh;
+        }
+
+        .quote-text {
+            max-width: 950px;
+
+            margin: auto;
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size:
+                clamp(38px, 6vw, 72px);
+
+            line-height: 1.1;
+
+            font-weight: 500;
+
+            color: #f9e8ed;
+        }
+
+        .quote-text span {
+            color: #ff729c;
+        }
+
+
+        /* =========================================================
+           FINAL
+        ========================================================= */
+
+        .final-section {
+            min-height: 100vh;
+
+            text-align: center;
+        }
+
+        .final-heart {
+            font-size: 65px;
+
+            color: #ff6f99;
+
+            margin-bottom: 30px;
+
+            animation:
+                pulsar 2s infinite;
+        }
+
+        .final-title {
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size:
+                clamp(65px, 11vw, 125px);
+
+            font-weight: 500;
+
+            line-height: .85;
+        }
+
+        .final-title span {
+            color: #ff709b;
+        }
+
+        .final-text {
+            max-width: 600px;
+
+            margin:
+                40px auto;
+
+            color: #b9a6ad;
+
+            font-size: 13px;
+
+            line-height: 1.9;
+        }
+
+        .forever {
+            margin-top: 55px;
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size: 32px;
+
+            color: #e99bb3;
+        }
+
+
+        /* =========================================================
+           PLAYER
+        ========================================================= */
+
+        .music-player {
+            position: fixed;
+
+            right: 22px;
+            bottom: 22px;
+
+            z-index: 100;
+
+            display: none;
+
+            align-items: center;
+
+            gap: 12px;
+
+            padding:
+                9px 15px 9px 9px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.12);
+
+            border-radius: 50px;
+
+            background:
+                rgba(14,5,10,.8);
+
+            backdrop-filter:
+                blur(15px);
+
+            box-shadow:
+                0 10px 40px
+                rgba(0,0,0,.35);
+        }
+
+        .music-button {
+            width: 39px;
+            height: 39px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: #ff6f99;
+
+            color: white;
+
+            cursor: pointer;
+
+            transition: .3s;
+        }
+
+        .music-button:hover {
+            transform: scale(1.08);
+        }
+
+        .music-text {
+            color: #c9b8be;
+
+            font-size: 9px;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            text-align: center;
+
+            padding: 30px;
+
+            color: #5c4a52;
+
+            font-size: 9px;
+
+            letter-spacing: 3px;
+        }
+
+
+        /* =========================================================
+           RESPONSIVO
+        ========================================================= */
+
+        @media (max-width: 700px) {
+
+            section {
+                padding:
+                    85px 20px;
+            }
+
+            .intro-title {
+                font-size: 70px;
+            }
+
+            .intro-description {
+                font-size: 12px;
+            }
+
+            .letter {
+                padding: 32px 23px;
+            }
+
+            .letter h3 {
+                font-size: 38px;
+            }
+
+            .letter p {
+                font-size: 13px;
+                line-height: 1.9;
+            }
+
+            .main-photo {
+                height: 400px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item,
+            .gallery-item.tall {
+                height: 400px;
+            }
+
+            .counter {
+                width: 105px;
+            }
+
+            .counter strong {
+                font-size: 38px;
+            }
+
+            .music-player {
+                right: 12px;
+                bottom: 12px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         FUNDO
+    ========================================================== -->
+
+    <div class="background"></div>
+
+    <div class="noise"></div>
+
+    <div class="stars" id="stars"></div>
+
+    <div class="hearts" id="hearts"></div>
+
+
+    <!-- =========================================================
+         TELA DE ABERTURA
+    ========================================================== -->
+
+    <section id="intro">
+
+        <div class="intro-content">
+
+            <div class="intro-heart">
+                ♡
+            </div>
+
+            <div class="intro-small">
+                uma coisa que eu fiz especialmente para você
+            </div>
+
+            <h1 class="intro-title">
+                Evelem<br>
+                <span>Kauane</span>
+            </h1>
+
+            <p class="intro-description">
+                Eu poderia simplesmente ter te mandado uma mensagem,
+                mas você merece algo que eu pudesse preparar pensando
+                em cada detalhe.
+                Então... antes de continuar, abre isso. ❤️
+            </p>
+
+            <button
+                class="open-button"
+                onclick="abrirCarta()"
+            >
+                ABRIR MINHA CARTA
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         CONTEÚDO
+    ========================================================== -->
+
+    <main id="main">
+
+
+        <!-- =====================================================
+             CARTA
+        ====================================================== -->
+
+        <section class="letter-section">
+
+            <div class="section-inner">
+
+                <div class="eyebrow">
+                    De Samuel para Evelem
+                </div>
+
+                <div class="letter">
+
+                    <div class="letter-date">
+                        Uma carta feita com todo o meu coração
+                    </div>
+
+                    <h3>
+                        Meu bem,
+                    </h3>
+
+
+                    <p>
+                        Tô fazendo isso pra você, porque sei o quanto você tá
+                        cansada e mesmo assim ainda tira do seu tempo pra passar
+                        comigo, e só queria dizer o quanto eu te amo com palavras:
+                    </p>
+
+
+                    <p>
+                        A gente pode ter se conhecido de uma maneira um tanto
+                        quanto diferente kkkkk... num jogo de chat no Roblox?
+                        Com certeza.
+                    </p>
+
+
+                    <p>
+                        Mas isso só torna nossa história ainda mais especial,
+                        e olha, mesmo ainda não estando juntos, quero passar
+                        minha vida toda ao seu lado, poder ser não só seu
+                        namorado, mas seu parceiro, seu melhor amigo,
+                        e te ter pra vida toda.
+                    </p>
+
+
+                    <p>
+                        Quero te ter nos momentos ruins, nos momentos que você
+                        não quer conversar, nos momentos que você tiver cansada,
+                        nos momentos que você simplesmente não quiser fazer nada.
+                    </p>
+
+
+                    <p>
+                        Quero estar com você todo santo dia, pra te fazer sorrir,
+                        já que seu sorriso pra mim, sua risada, sua felicidade,
+                        é o que torna meu dia mais colorido.
+                    </p>
+
+
+                    <!-- FRASE ESPECIAL -->
+
+                    <div class="highlight">
+
+                        <span>“</span>
+
+                        Você é a aquarela que pinta o papel
+                        da minha vida.
+
+                        <span>”</span>
+
+                    </div>
+
+
+                    <p>
+                        E todos os dias agradeço a Deus pela mulher que eu
+                        tanto amo, e mesmo que pareça contra todas as
+                        probabilidades, logo estarei do seu lado pra amar
+                        cada pedacinho seu de perto.
+                    </p>
+
+
+                    <p>
+                        Mesmo que eu tenha que abrir mão de tudo, já que pra
+                        mim, você é o maior tesouro que apareceu.
+                    </p>
+
+
+                    <p>
+                        Posso não ser o garoto perfeito nem o mais rico,
+                        o mais famoso, mas pode ter certeza que sou o mais
+                        apaixonado por você.
+                    </p>
+
+
+                    <p>
+                        E sabe o engraçado?
+                    </p>
+
+
+                    <p>
+                        O que me conquistou em você não foi aquilo que meus
+                        olhos veem, mas sim o seu jeito, o seu carinho,
+                        e a maneira que você dedica seu tempo pra mim mesmo
+                        em momentos que você preferia passar sozinha.
+                    </p>
+
+
+                    <p>
+                        Por isso te amo tanto, porque me apaixonei pela
+                        pessoa que você é.
+                    </p>
+
+
+                    <p>
+                        Mas claro...
+                        você é a mulher mais linda que já conheci
+                        na minha vida.
+                    </p>
+
+
+                    <p style="
+                        font-size: 25px;
+                        text-align: center;
+                        margin-top: 35px;
+                    ">
+                        🫶❤️‍🩹
+                    </p>
+
+
+                    <div class="signature">
+
+                        Com todo meu amor,<br>
+
+                        Samuel ❤️
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FOTO PRINCIPAL
+        ====================================================== -->
+
+        <section class="photo-section">
+
+            <div class="section-inner">
+
+                <div class="eyebrow">
+                    nós
+                </div>
+
+                <h2 class="section-title">
+                    Alguns dos meus<br>
+                    momentos favoritos
+                </h2>
+
+
+                <div class="main-photo">
+
+                    <img
+                        src="fotos/foto1.jpg"
+                        alt="Samuel e Evelem"
+                    >
+
+                    <div class="photo-overlay"></div>
+
+                </div>
+
+
+                <div class="photo-caption">
+                    "Se eu pudesse escolher um lugar para estar,
+                    seria ao seu lado."
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             GALERIA
+        ====================================================== -->
+
+        <section>
+
+            <div class="section-inner">
+
+                <div class="eyebrow">
+                    nossas memórias
+                </div>
+
+                <h2 class="section-title">
+                    Fotos que eu mais amo suas
+                </h2>
+
+
+                <div class="gallery">
+
+
+                    <div class="gallery-item tall">
+
+                        <img
+                            src="fotos/foto2.jpg"
+                            alt="Memória de nós"
+                        >
+
+                    </div>
+
+
+                    <div class="gallery-item">
+
+                        <img
+                            src="fotos/foto3.jpg"
+                            alt="Memória de nós"
+                        >
+
+                    </div>
+
+
+                    <div class="gallery-item">
+
+                        <img
+                            src="fotos/foto4.jpg"
+                            alt="Memória de nós"
+                        >
+
+                    </div>
+
+
+                    <div class="gallery-item tall">
+
+                        <img
+                            src="fotos/foto5.jpg"
+                            alt="Memória de nós"
+                        >
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CONTADOR
+        ====================================================== -->
+
+        <section>
+
+            <div class="section-inner">
+
+                <div class="eyebrow">
+                    nosso tempo
+                </div>
+
+                <h2 class="section-title">
+                    E pensar que tudo<br>
+                    começou com nós dois.
+                </h2>
+
+
+                <p class="counter-description">
+                    Cada segundo que passa é mais um pedacinho da história
+                    que eu quero continuar escrevendo ao seu lado.
+                </p>
+
+
+                <div class="counter-box">
+
+
+                    <div class="counter">
+
+                        <strong id="days">
+                            0
+                        </strong>
+
+                        <span>
+                            dias
+                        </span>
+
+                    </div>
+
+
+                    <div class="counter">
+
+                        <strong id="hours">
+                            0
+                        </strong>
+
+                        <span>
+                            horas
+                        </span>
+
+                    </div>
+
+
+                    <div class="counter">
+
+                        <strong id="minutes">
+                            0
+                        </strong>
+
+                        <span>
+                            minutos
+                        </span>
+
+                    </div>
+
+
+                    <div class="counter">
+
+                        <strong id="seconds">
+                            0
+                        </strong>
+
+                        <span>
+                            segundos
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FRASE CINEMATOGRÁFICA
+        ====================================================== -->
+
+        <section class="quote">
+
+            <div class="section-inner">
+
+                <div class="quote-text">
+
+                    "Em um mundo com bilhões de pessoas,
+
+                    <span>
+                        eu tive a sorte de encontrar você.
+                    </span>
+
+                    E, sinceramente?
+
+                    Eu não quero mais imaginar meus dias
+                    sem você neles."
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FINAL
+        ====================================================== -->
+
+        <section class="final-section">
+
+            <div class="section-inner">
+
+                <div class="final-heart">
+                    ♥
+                </div>
+
+
+                <div class="eyebrow">
+                    e essa é a parte mais importante...
+                </div>
+
+
+                <h2 class="final-title">
+
+                    Eu amo<br>
+
+                    <span>
+                        você.
+                    </span>
+
+                </h2>
+
+
+                <p class="final-text">
+
+                    Talvez essa página nunca consiga explicar
+                    completamente tudo o que eu sinto.
+
+                    Mas espero que cada palavra, cada foto e cada
+                    detalhe tenha conseguido mostrar pelo menos
+                    um pouquinho do tamanho do meu amor por você.
+
+                    E quando você terminar de ler tudo isso,
+                    lembra de uma coisa:
+
+                    você é o meu maior tesouro.
+
+                </p>
+
+
+                <div class="forever">
+
+                    Samuel & Evelem
+
+                    <br>
+
+                    <small style="
+                        font-family: Poppins;
+                        font-size: 9px;
+                        letter-spacing: 3px;
+                        color: #725c65;
+                    ">
+                        UMA HISTÓRIA QUE EU AINDA QUERO ESCREVER
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+
+            FEITO POR SAMUEL GOUVEA · PARA EVELEM KAUANE ❤️
+
+        </footer>
+
+
+    </main>
+
+
+    <!-- =========================================================
+         PLAYER DE MÚSICA
+    ========================================================== -->
+
+    <div
+        class="music-player"
+        id="musicPlayer"
+    >
+
+        <button
+            class="music-button"
+            id="musicButton"
+            onclick="toggleMusic()"
+        >
+            ▶
+        </button>
+
+        <div class="music-text">
+            uma música para nós ❤️
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         MÚSICA
+    ========================================================== -->
+
+    <audio
+        id="music"
+        loop
+    >
+
+        <source
+            src="musica.mp3"
+            type="audio/mpeg"
+        >
+
+    </audio>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script>
+
+
+        /* =====================================================
+           DATA DO RELACIONAMENTO
+        ====================================================== */
+
+        /*
+            MUDE ESSA DATA.
+
+            Exemplo:
+
+            const dataInicio =
+                new Date("2026-01-10T20:00:00");
+
+            Coloque a data que você quiser usar
+            no contador.
+        */
+
+        const dataInicio =
+            new Date("2026-06-03T00:00:00");
+
+
+        /* =====================================================
+           ABRIR O SITE
+        ====================================================== */
+
+        function abrirCarta() {
+
+            const intro =
+                document.getElementById("intro");
+
+            const main =
+                document.getElementById("main");
+
+            const music =
+                document.getElementById("music");
+
+            const musicPlayer =
+                document.getElementById("musicPlayer");
+
+
+            intro.style.opacity = "0";
+
+            intro.style.transform =
+                "scale(1.05)";
+
+
+            setTimeout(() => {
+
+                intro.style.display = "none";
+
+                main.style.display = "block";
+
+
+                setTimeout(() => {
+
+                    main.style.opacity = "1";
+
+                }, 100);
+
+
+                musicPlayer.style.display =
+                    "flex";
+
+
+                /*
+                    Como o play acontece depois do clique,
+                    o navegador normalmente permite a música.
+                */
+
+                music.play()
+                    .then(() => {
+
+                        document
+                            .getElementById("musicButton")
+                            .innerHTML = "❚❚";
+
+                    })
+                    .catch(() => {
+
+                        console.log(
+                            "Autoplay bloqueado pelo navegador."
+                        );
+
+                    });
+
+
+                iniciarCoracoes();
+
+            }, 1200);
+
+        }
+
+
+        /* =====================================================
+           MÚSICA
+        ====================================================== */
+
+        function toggleMusic() {
+
+            const music =
+                document.getElementById("music");
+
+            const button =
+                document.getElementById("musicButton");
+
+
+            if (music.paused) {
+
+                music.play();
+
+                button.innerHTML =
+                    "❚❚";
+
+            } else {
+
+                music.pause();
+
+                button.innerHTML =
+                    "▶";
+
+            }
+
+        }
+
+
+        /* =====================================================
+           CORAÇÕES
+        ====================================================== */
+
+        function criarCoracao() {
+
+            const container =
+                document.getElementById("hearts");
+
+            const heart =
+                document.createElement("div");
+
+
+            heart.className =
+                "heart";
+
+
+            const simbolos = [
+                "♥",
+                "♡",
+                "❤",
+                "✦"
+            ];
+
+
+            heart.innerHTML =
+                simbolos[
+                    Math.floor(
+                        Math.random()
+                        * simbolos.length
+                    )
+                ];
+
+
+            heart.style.left =
+                Math.random() * 100 + "%";
+
+
+            heart.style.fontSize =
+                (10 + Math.random() * 18)
+                + "px";
+
+
+            heart.style.animationDuration =
+                (7 + Math.random() * 8)
+                + "s";
+
+
+            container.appendChild(
+                heart
+            );
+
+
+            setTimeout(() => {
+
+                heart.remove();
+
+            }, 15000);
+
+        }
+
+
+        function iniciarCoracoes() {
+
+            setInterval(
+                criarCoracao,
+                750
+            );
+
+        }
+
+
+        /* =====================================================
+           ESTRELAS
+        ====================================================== */
+
+        function criarEstrelas() {
+
+            const container =
+                document.getElementById("stars");
+
+
+            for (
+                let i = 0;
+                i < 100;
+                i++
+            ) {
+
+                const star =
+                    document.createElement("div");
+
+
+                star.className =
+                    "star";
+
+
+                star.style.left =
+                    Math.random() * 100
+                    + "%";
+
+
+                star.style.top =
+                    Math.random() * 100
+                    + "%";
+
+
+                star.style.animationDelay =
+                    Math.random() * 4
+                    + "s";
+
+
+                star.style.opacity =
+                    Math.random();
+
+
+                container.appendChild(
+                    star
+                );
+
+            }
+
+        }
+
+
+        criarEstrelas();
+
+
+        /* =====================================================
+           CONTADOR
+        ====================================================== */
+
+        function atualizarContador() {
+
+            const agora =
+                new Date();
+
+
+            let diferenca =
+                agora - dataInicio;
+
+
+            if (diferenca < 0) {
+
+                diferenca = 0;
+
+            }
+
+
+            const segundosTotal =
+                Math.floor(
+                    diferenca / 1000
+                );
+
+
+            const dias =
+                Math.floor(
+                    segundosTotal / 86400
+                );
+
+
+            const horas =
+                Math.floor(
+                    (segundosTotal % 86400)
+                    / 3600
+                );
+
+
+            const minutos =
+                Math.floor(
+                    (segundosTotal % 3600)
+                    / 60
+                );
+
+
+            const segundos =
+                segundosTotal % 60;
+
+
+            document
+                .getElementById("days")
+                .textContent = dias;
+
+
+            document
+                .getElementById("hours")
+                .textContent = horas;
+
+
+            document
+                .getElementById("minutes")
+                .textContent = minutos;
+
+
+            document
+                .getElementById("seconds")
+                .textContent = segundos;
+
+        }
+
+
+        atualizarContador();
+
+
+        setInterval(
+            atualizarContador,
+            1000
+        );
+
+
+        /* =====================================================
+           ANIMAÇÃO DAS SEÇÕES
+        ====================================================== */
+
+        const observer =
+            new IntersectionObserver(
+
+                (entries) => {
+
+                    entries.forEach(
+                        (entry) => {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target
+                                    .classList
+                                    .add("visible");
+
+                            }
+
+                        }
+                    );
+
+                },
+
+                {
+                    threshold: .15
+                }
+
+            );
+
+
+        const sections =
+            document.querySelectorAll(
+                "section"
+            );
+
+
+        sections.forEach(
+            (section) => {
+
+                section.style.opacity = "0";
+
+                section.style.transform =
+                    "translateY(35px)";
+
+                section.style.transition =
+                    "opacity 1.2s ease, transform 1.2s ease";
+
+
+                observer.observe(
+                    section
+                );
+
+            }
+        );
+
+
+        /*
+            Faz a primeira seção aparecer
+            normalmente.
+        */
+
+        document
+            .getElementById("intro")
+            .style.opacity = "1";
+
+
+        /*
+            Quando uma seção fica visível,
+            ela ganha essa animação.
+        */
+
+        const style =
+            document.createElement("style");
+
+
+        style.innerHTML = `
+
+            section.visible {
+
+                opacity: 1 !important;
+
+                transform:
+                    translateY(0) !important;
+
+            }
+
+        `;
+
+
+        document.head.appendChild(
+            style
+        );
+
+
+    </script>
+
+</body>
+
+</html>
+```
